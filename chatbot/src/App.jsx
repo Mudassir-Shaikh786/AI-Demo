@@ -28,7 +28,7 @@ function App()
     }
   }
   return (
-  <div className=" relative-h-screen flex flex-col justify-center items-center">
+  <div className=" relative-h-screen flex flex-wrap flex-col justify-center items-center">
     <div className=" absolute inset-0">
     <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
       </div>
@@ -42,11 +42,13 @@ function App()
         ))
       }
     </div>
-    <div className="input fixed bottom-0 my-5">
-    <input onChange={(e)=>setInput(e.target.value)} className="text-3xl rounded-2xl border border-blue-700 py-5" type="text" value={input} placeholder="Ask Me Something" />
-    <button onClick={handleInput} className="bg-blue-700 text-white ms-2 p-5 text-center text-2xl rounded-4xl"> Send </button>
-    <button onClick={()=>setChat([])} className="bg-blue-700 text-white ms-2 p-5 text-center text-2xl rounded-4xl"> Clear </button>
+    <div className="input fixed justify-center flex flex-wrap bottom-1 my-5 w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <input onChange={(e)=>setInput(e.target.value)} className="text-xl sm:text-2xl rounded-2xl border border-blue-700 py-4 sm:py-5 w-full sm:w-80 md:w-96 lg:w-[500px] xl:w-[600px]" type="text" value={input} placeholder="Ask Me Something" />
+    <div className="flex flex-col sm:flex-row mt-2 sm:mt-0 sm:ms-5 sm:space-x-4 w-full sm:w-auto">
+    <button onClick={handleInput} className="bg-blue-700 text-white p-4 sm:p-5 text-center text-lg sm:text-2xl rounded-4xl w-full sm:w-auto"> Send </button> 
+    <button onClick={()=>setChat([])} className="bg-blue-700 text-white p-4 sm:p-5 text-center text-lg sm:text-2xl rounded-4xl mt-2 sm:mt-0 w-full sm:w-auto"> Clear </button>
     </div>
+  </div>
   </div>
   )
 }
